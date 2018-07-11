@@ -1,0 +1,76 @@
+<view class='container'>
+   <view class = "navbar">
+    <view class="navbar-item {{navBar_active1}}" bindtap='bindNavbar1'>有规律倒班</view>
+    <view class="navbar-item {{navBar_active2}}" bindtap='bindNavbar2'>无规律倒班</view>
+  </view>
+  <view class=''></view> 
+  <view class='navbar-tab {{navbar_tab1}}'>
+    <view><text style="color: red;">已选倒班方式：</text>{{activeDaoban}} 每班{{activeDaobanNumber}}</view>
+    <picker-view indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{daobanValue}}" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{daobanNames}}" style="line-height: 50px">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{dayNumbers}}" style="line-height: 50px">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+    <view class='{{zidingyi}}'>
+      <view style='text-align:center;font-size:18px;'>自定义设置说明</view>
+      <view style='padding:8px;'>
+        根据倒班的情况和天数，点击下方对应的按钮，依照班次添加。比如2天白班，2天中班，2天夜班，2天休息。就可以设置为"白白中中夜夜休休"
+      </view>
+      <view class='inputbanci'>[开始]<text class='bc'>{{setbanci}}</text>[结束]</view>
+        <button class='butclick' size='mini' bindtap='bai' >白班</button> 
+        <button class='butclick' size='mini' bindtap='zhong' >中班</button>
+        <button class='butclick' size='mini' bindtap='ye'>夜班</button>
+        <button class='butclick' size='mini' bindtap='fullday' >全天</button>
+        <button class='butclick' size='mini' bindtap='xiu' >休息</button>
+        <button class='butclick' size='mini' bindtap='clear' type='warn'>清除</button>
+      </view>
+  </view>
+  <!-- 无规律倒班 -->
+  <view class='navbar-tab {{navbar_tab2}}'>
+    <view class="flex box box-tb box-align-center">
+      <view class="calendar pink-color box box-tb">
+            <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+                 <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev"> 
+                <!-- <view class="prev box box-rl"  data-handle="prev"> -->
+                    <view class="prev-handle box box-lr box-align-center box-pack-center">《</view>
+                </view>
+                <view bindtap="chooseYearAndMonth" class="date-area box box-lr box-align-center box-pack-center">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+                 <view class="next box box-lr" bindtap="handleCalendar" data-handle="next"> 
+                <!-- <view class="next box box-lr"  data-handle="next"> -->
+                    <view class="next-handle box box-lr box-align-center box-pack-center">》</view>
+                </view>
+            </view>
+            <view class="weeks box box-lr box-pack-center box-align-center">
+                <view class="flex week fs28" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+            </view>
+            <view class="days box box-lr box-wrap">
+                <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+                </view>
+                <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="tapDayItem">
+                    <view class="day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>点击选择当月休息时间</view>
+    <view style='font-size:12px;color:#1BACA9;'>提示：只能设置一个月内的休息数据</view>
+    <view wx:if="{{showPicker}}" class="box box-tb">
+      <view class="picker-btns box box-lr box-pack-between box-align-center">
+        <view class="picker-btn picker-cancel" data-type="cancel" bindtap="tapPickerBtn">取消</view>
+        <view class="picker-btn picker-confirm" data-type="confirm" bindtap="tapPickerBtn">确定</view>
+      </view>
+      <picker-view class="flex" indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{picker_value}}" bindchange="pickerChange">
+        <picker-view-column>
+          <view class="picker-view" wx:for="{{picker_year}}" style="line-height: 50px">{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view class="picker-view" wx:for="{{picker_month}}" style="line-height: 50px">{{item}}月</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+  <button type="primary" style='width:90%;' size='default'  bindtap="primarySave"> 应用 </button>
+</view>

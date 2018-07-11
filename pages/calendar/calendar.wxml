@@ -1,0 +1,357 @@
+<!--calendar.xwml-->
+<!-- <import src='../tpls/calendar1/calendar1-tpls.wxml' /> -->
+
+<view class="container">
+  <view class="header">
+    <!-- <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindNewDate"> -->
+    <view class="header-left">
+      <view class="month"> {{month}}月 </view>
+      <view class="week"> {{week}}</view>
+      <view class="year"> {{year}}年 </view>
+    </view>
+    <!-- </picker>   -->
+    <view class="header-right">
+      <view class="today" bindtap="taptheday">今</view>
+    </view>
+    <view class="title">
+      <view class="week-title" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class="rili-footer"></view>
+  <!--header end-->
+  <!-- <template is="{{templateName}}" data='{{...item}}'></template> -->
+  <!-- <block wx:if="{{pattern}}"> -->
+  <view class="rili-main">
+    <swiper previous-margin="-3rpx" duration='{{duration}}' circular='true' bindanimationfinish='onSetData' current='{{indexNumber}}'>
+      <swiper-item>
+        <view wx:for="{{rili0}}">
+          <view wx:if="{{item[8] == 1}}">
+            <view class="day day-1">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+          <view wx:else>
+            <view class="day day-0">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view wx:for="{{rili1}}">
+          <view wx:if="{{item[8] == 1}}">
+            <view class="day day-1">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+          <view wx:else>
+            <view class="day day-0">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view wx:for="{{rili2}}">
+          <view wx:if="{{item[8] == 1}}">
+            <view class="day day-1">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+          <view wx:else>
+            <view class="day day-0">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view wx:for="{{rili0}}">
+          <view wx:if="{{item[8] == 1}}">
+            <view class="day day-1">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+          <view wx:else>
+            <view class="day day-0">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view wx:for="{{rili1}}">
+          <view wx:if="{{item[8] == 1}}">
+            <view class="day day-1">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+          <view wx:else>
+            <view class="day day-0">
+              <view class="work" wx:if="{{item[7] == '夜' }}">
+                <text class="color-blue">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:elif="{{item[7] == '休' }}">
+                <text class="color-green">{{item[7]}}</text>
+              </view>
+              <view class="work" wx:else>
+                <text class="color-red">{{item[7]}}</text>
+              </view>
+              <view wx:if="{{item[9] == 1}}">
+                <view class="rili-box select-day theday">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">
+                    {{item[4]}}
+                  </view>
+                </view>
+              </view>
+              <view wx:else>
+                <view class="rili-box">
+                  <view class="rili-tian" data-year="{{item[1]}}" data-month="{{item[2]}}">{{item[3]}}</view>
+                  <view class="rili-nongli hidd">{{item[4]}}</view>
+                </view>
+              </view>
+              <!--end else-->
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- </block> -->
+  <!-- <block wx:else>
+    <view class='calendar2'>
+      <view class="days box box-lr box-wrap">
+        <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+        </view>
+        <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+        </view>
+      </view>
+    </view>
+  </block> -->
+  <!--main end-->
+  <view class="rili-footer"></view>
+  <view class="shuoming">
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2050-01-01" bindchange="bindDateChange">
+        <view class="picker">
+          <view class="fa fa-2x fa-clock-o  left setting"></view>
+          开始上班日期: {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="shuoming" bindtap="setcalendar">
+    设置倒班方式
+    <view class="fa fa-2x fa-cog left setting"></view>
+  </view>
+
+</view>

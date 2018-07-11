@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/calendar/calendar",
+    "pages/setting/setting",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FFF",
+    "navigationBarTitleText": "定制日历",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#3cc51f",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/calendar/calendar",
+        "iconPath": "utils/images/28.png",
+        "selectedIconPath": "utils/images/set_28.png",
+        "text": "日历"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "utils/images/about.png",
+        "selectedIconPath": "utils/images/set_about.png"
+      }
+    ]
+  }
+}

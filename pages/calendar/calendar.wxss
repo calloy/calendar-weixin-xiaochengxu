@@ -1,0 +1,247 @@
+/*calendar.wxss*/
+@import "../../utils/fa.wxss";
+.container{
+    width: 100%;
+    padding-top:0;
+    font-family: "微软雅黑"; 
+    /* background-color: #adadad;   */
+    background-color:#D6D3D3;
+}
+
+.header {
+   height: 100%;
+   width: 100%;
+    /* background-color: #31a9a5; */
+    background-color: #1BACA9; 
+   color: #ffffff;
+   font-family: "微软雅黑"
+}
+.header-left {
+    /* height: 30px; */
+    /* width: 160px; */
+    height: 60rpx;
+    width: 310rpx;
+    float: left;
+    /* padding-top: 20px; */
+    /* padding-left: 20px; */
+    padding-top: 40rpx;
+    padding-left: 40rpx;
+    /*background-color: #342421;*/
+    position: relative;
+    font-size: 24rpx;
+
+}
+.header-left .month {
+    /* margin-right: 10px;
+    line-height: 30px;
+    font-size: 30px; */
+    margin-right: 20rpx;
+    line-height: 60rpx;
+    font-size: 60rpx;
+    float: left;
+    display: block;
+}
+.header-left .week {
+    width: 160rpx;
+    line-height: 30rpx;
+    float: left;
+    display: block;
+}
+.header-left .year {
+    float: left;
+}
+.header-right {
+    width: 30%;
+    height: 60rpx;
+    float: right;
+    /* padding-top: 10px;
+    margin-top: 10px;
+    margin-right: 30px; */
+    padding-top: 20rpx;
+    margin-top: 20rpx;
+    margin-right: 60rpx;
+}
+.header-right .today {
+    display: block;
+    float: right;
+    /* width: 30px;
+    height: 30px;
+    font-size: 15px;
+    line-height: 30px; */
+    width: 60rpx;
+    height: 60rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background-color: #FFFFFF;
+    /* border-radius: 20px; */
+    border-radius: 40rpx;
+    color: #31A9A5;
+}
+.title{
+  width:100%;
+  /* height: 30px; */
+  height: 60rpx;
+  float: left;
+  /* font-size: 12px;  */
+  font-size: 24rpx;
+}
+.title .week-title {
+    width: 14.285%;
+    /* margin-top: 10px; */
+    margin-top: 20rpx;
+    text-align: center;
+    list-style: none;
+    display: block;
+    float: left;
+}
+
+/*开始日历*/
+.rili-main {
+	  width: 100%;
+	  /* height: 318px; */
+    height: 636rpx;
+
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+    background-color: #FFFFFF;
+    position: relative;
+
+}
+
+.rili-main swiper{
+  width: 100%;
+  height: 100%;
+}
+.rili-main swiper-item{
+  width: 100%;
+  border-left: 1rpx solid #E6E1E1; 
+}
+.rili-main .day {
+  	width: 14.285%;
+    /* height: 43px; */
+    height: 86rpx;
+    /*hpx;*/
+    padding-top: 20rpx;
+    color: #000000;
+    font-size: 28rpx;
+    text-align: center;
+    display: list-item;
+    float: left;
+    list-style: none;
+    position: relative;
+}
+.rili-main .day-0{
+   /* 非当月日期样式 */
+	color: #ADADAD;
+}
+.rili-main .day-1{
+  /* 当月日期样式*/
+  font-weight: 600;
+	color: #444444;
+}
+.rili-box{
+    width: 68rpx;
+    height: 68rpx;
+    padding-top: 14rpx;
+    margin-left: 10rpx;
+}
+
+.rili-box .rili-nongli{
+    line-height: 28rpx;
+    font-size: 20rpx;
+    color: #adadad;
+}
+/*上班状态*/
+.work{
+    width: 20rpx;
+    height: 20rpx;
+   	position: absolute;
+    top: 10rpx;
+    left: 70rpx;
+    font-size: 16rpx;
+}
+.color-red{
+  font-weight: 500;
+	color: red;
+}
+.color-blue{
+  font-weight: 500;
+	color: blue;
+}
+.color-green{
+  font-weight: 500;
+	color: green;
+}
+.select-day{
+    height: 54rpx;
+    padding-top: 14px;
+    border: 1rpx solid #31A9A5;
+    border-radius: 40rpx;
+    position: relative;
+}
+.theday{
+    height: 54rpx; 
+    padding-top: 14rpx;
+    background-color: #31A9A5;
+    border: 1rpx solid #31A9A5;
+    border-radius: 40rpx;
+    color: #FFFFFF;
+    position: relative;
+}
+    	
+/*当日期被选择的时候隐藏农历*/
+.select-day .hidd{
+    display: none;
+}
+
+.rili-footer{
+    height: 10rpx;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+
+.shuoming {
+    background-color:#FFFFFF;
+    /* height: 50px; */
+    height: 100rpx;
+    width: 100%; 
+    font-size: 28rpx;
+    line-height: 100rpx;
+    margin-top: 14rpx;
+    text-indent: 2em;
+}
+.shuoming .right {
+    float: right;
+}
+.shuoming .left{
+  float:left;
+}
+.shuoming .setting {
+    /* line-height: 50px;
+    margin-right: 15px; */
+    line-height: 100rpx;
+    margin-right: 30rpx;
+    color:#333333;
+}
+.fudong{
+    /* width: 50px;
+    height: 50px; */
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 20rpx;
+    bottom: 100rpx;
+    border: 1rpx solid #31A9A5;
+    border-radius: 25px;
+    color: #ffffff;
+    background-color: #31A9A5;
+}
+.yicon {
+    position: relative;
+    line-height: 100rpx;
+    font-size: 60rpx;
+    margin-left: 28rpx;
+}

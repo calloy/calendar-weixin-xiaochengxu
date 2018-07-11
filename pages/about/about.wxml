@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <image class="logo_image" src='../../utils/images/about1.png'></image>
+  </view>
+  <view class='texts'>
+    <view class='banben'>定制日历 v0.2.180618</view>
+    <view class='shuoming'>这个小程序主要是为了解决倒班人员排班问题，内置了各种排班方式，也可以灵活的自定义。如有任何疑问和建议请联系我哟。
+    </view>
+    <view class='shuoming'>邮箱：calloy2007@163.com</view>
+    <view class='shuoming'>微信：calloy2007</view>
+    <button class='zan' bindtap='zan'>给我点个赞吧</button>
+  </view>
+
+  
+</view>

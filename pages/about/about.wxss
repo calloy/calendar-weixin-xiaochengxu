@@ -1,0 +1,30 @@
+/* .container {
+  align-items: left;
+} */
+.logo_image{
+  width: 100px;
+  height: 100px;
+}
+.texts{
+  align-items: left;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.shuoming{
+  font-size: 14px;
+  padding-top:5px;
+  line-height: 18px; 
+  text-indent: 2em;
+}
+.banben{
+  text-align:  center;
+  padding-top: 10px;
+  font-size: 12px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.zan{
+  margin-top:10px;
+}
